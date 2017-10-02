@@ -40,7 +40,6 @@ class UsersController extends Controller
     $firstName = $request->input('firstName');
     $lastName = $request->input('lastName');
     $phone_num = $request->input('phone_num');
-    $email = $request->input('email');
     $address01 = $request->input('address01');
     $address02 = $request->input('address02');
     $city = $request->input('city');
