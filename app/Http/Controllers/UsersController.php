@@ -16,17 +16,17 @@ class UsersController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('jwt.auth', ['only' => ['getUser', 'signOut']]);
+    $this->middleware('jwt.auth', ['only' => ['signIn', 'getUser', 'signOut']]);
   }
 
   public function signUp(Request $request)
   {
     $rules = [
-      'email'=> 'required'
-      'password'=> 'required'
-      'firstName'=> 'required'
-      'lastName'=> 'required'
-      'phone_num'=> 'required'
+      'email'=> 'required',
+      'password'=> 'required',
+      'firstName'=> 'required',
+      'lastName'=> 'required',
+      'phoneNum'=> 'required'
     ];
 
     $validator = Validator::make(Purifier::clean($request->all()), $rules);
@@ -39,13 +39,13 @@ class UsersController extends Controller
     $email = $request->input('email');
     $firstName = $request->input('firstName');
     $lastName = $request->input('lastName');
-    $phone_num = $request->input('phone_num');
+    $phoneNum = $request->input('phoneNum');
     $address01 = $request->input('address01');
     $address02 = $request->input('address02');
     $city = $request->input('city');
     $state = $request->input('state');
     $zip = $request->input('zip');
-    $allow_Contact = $request->input('allow_Contact');
+    $allowContact = $request->input('allowContact');
 
     /*checks to see if username already exists.*/
     $duplicate = User::where('email', '=', $email)->select('id')->first();
@@ -58,13 +58,13 @@ class UsersController extends Controller
       $users->email = $email;
       $users->firstName = $firstName;
       $users->lastName = $lastName;
-      $users->phone_num = $phone_num;
+      $users->phoneNum = $phoneNum;
       $users->address01 = $address01;
       $users->address02 = $address02;
       $users->city = $city;
       $users->state = $state;
       $users->zip = $zip;
-      $users->allow_Contact = $allow_Contact;
+      $users->allowContact = $allowContact;
 
       $users->save();
 

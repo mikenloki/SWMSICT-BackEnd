@@ -13,7 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::any('{path?}', 'MainController@index')->where("path", ".+");
+Route::post('signUp', 'UsersController@signUp');
+Route::post('signIn', 'UsersController@signIn');
+Route::get('signOut', 'UsersController@signOut');
+Route::get('getUser', 'UsersController@getUser');
 
-Route::post('signUpUser', 'UsersController@signUp');
-Route::post('storeInfo', 'InfoController@store');
+Route::any('{path?}', 'MainController@index')->where("path", ".+");
