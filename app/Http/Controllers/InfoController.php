@@ -49,21 +49,3 @@ class InfoController extends Controller
     return Response::json(['success' => "Your data was successfully accepted. Welcome Aboard!"]);
   }
 }
-
-======================================
-
-?php
-
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Response;
-use Purifier;
-
-//use App\Photo;
-
-class UsersController extends Controller
-{
-
-  }
