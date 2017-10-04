@@ -25,8 +25,7 @@ class UsersController extends Controller
       'email'=> 'required',
       'password'=> 'required',
       'firstName'=> 'required',
-      'lastName'=> 'required',
-      'phoneNum'=> 'required'
+      'lastName'=> 'required'
     ];
 
     $validator = Validator::make(Purifier::clean($request->all()), $rules);

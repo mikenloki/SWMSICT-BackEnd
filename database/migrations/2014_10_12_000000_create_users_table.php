@@ -19,14 +19,13 @@ class CreateUsersTable extends Migration
             $table->string('lastName');
             $table->string('email');
             $table->string('password');
-            $table->integer('roleID');
-            $table->string('phone_num');
+            $table->string('phoneNum');
             $table->string('address01')->nullable();
             $table->string('address02')->nullable();
             $table->string('city')->nullable();
             $table->string('state')->nullable();
             $table->string('zip')->nullable();
-            $table->boolean('allow_contact');
+            $table->boolean('allowContact');
             $table->rememberToken();
             $table->timestamps();
         });
