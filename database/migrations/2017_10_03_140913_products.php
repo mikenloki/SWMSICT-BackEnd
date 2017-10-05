@@ -19,11 +19,18 @@ class Products extends Migration
           $table->string('name');
           $table->longText('summary');
           $table->integer('riskLevel');
-          $table->integer('fees');
+          $table->string('fees');
           $table->string('performance');
           $table->integer('minInvestment');
           $table->boolean('physicalLocationAvailable');
           $table->boolean('specialOffersAvailable');
+          $table->boolean('show');
+          $table->boolean('isStock');
+          $table->boolean('isBond');
+          $table->boolean('isMutualFund');
+          $table->boolean('isETF');
+          $table->boolean('isRetirement');
+          $table->boolean('isIndexFund');
           $table->timestamps();
       });
     }

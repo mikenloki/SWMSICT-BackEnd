@@ -18,4 +18,6 @@ Route::post('signIn', 'UsersController@signIn');
 Route::get('signOut', 'UsersController@signOut');
 Route::get('getUser', 'UsersController@getUser');
 
+Route::post('getProducts', 'InfoController@getProducts');
+
 Route::any('{path?}', 'MainController@index')->where("path", ".+");
